@@ -1,0 +1,175 @@
+/* =================== RESET =================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* =================== FORM SHARED =================== */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: 600;
+    color: #444;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="number"],
+form input[type="password"],
+form select,
+form textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    background-color: #fafafa;
+}
+
+form input:focus,
+form select:focus,
+form textarea:focus {
+    border-color: #3498db;
+    outline: none;
+}
+
+/* =================== ADD / CREATE FORM =================== */
+.add_A, .update_form, .delete_update {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+.add_B h2,
+.update_form h2,
+.delete_update h2 {
+    font-size: 24px;
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+}
+
+/* =================== BUTTONS SHARED =================== */
+
+button,
+a.btn,
+a.add_D{
+    padding: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    border-radius: 8px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    border: none;
+    display: inline-block;
+    transition: background 0.2s ease-in-out;
+    width: 100%;
+}
+
+/* Container for grouped buttons */
+.add_C,
+form .form-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+/* Save / Submit buttons */
+.add_C button,
+.update-btn {
+    background-color: #0a27cf;
+    color: white;
+}
+
+.add_C button:hover,
+.update-btn:hover {
+    background-color: #1e0772;
+}
+
+/* Cancel buttons (gray) */
+.add_D,
+.cancel_update {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    line-height: 42px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.add_D:hover,
+.cancel_update:hover {
+    background-color: #95a5a6;
+}
+
+/* =================== DELETE FORM =================== */
+.delete_update h2 {
+    color: #c0392b;
+}
+
+.delete_update p {
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.delete_update ul {
+    margin: 10px 0 25px;
+    list-style: none;
+    padding-left: 0;
+}
+
+.delete_update ul li {
+    font-size: 15px;
+    padding: 6px 0;
+    color: #333;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.delete_cancel {
+    background-color: #bdc3c7;
+    color: #2c3e50;
+    line-height: 42px;
+    cursor: pointer;
+    border-radius: 8px;
+    text-decoration: none;
+    text-align: center;
+    font-weight: 600;
+}
+
+.delete_cancel:hover {
+    background-color: #95a5a6;
+}

@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =============== NAVIGATION BAR ======================= */
+#nav_bar {
+    background-color: #2980b9; 
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.4);
+    position: sticky;
+    top: 0;
+    /* z-index: 100; */
+}
+
+.nav_container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 48px; /* space between logo and links */
+}
+.logo {
+    margin-right: 600px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.links li a {
+    color: #f7f7ff; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.links li a:hover,
+.links li a:focus {
+    background-color: #2e3d47; 
+    outline: none;
+}
+/* =================Student Counts======================= */
+.student-count {
+    text-align: right;
+}
+
+.student-count p {
+    font-weight: bold;
+    color: #2c3e50;
+    font-size: 16px;
+}
+/* =================Add Students======================= */
+.add_student a{
+    font-size: 20px;
+    font-weight: 600;
+    color: #2980b9; 
+    text-decoration: none;
+    display: inline-flex;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 10px 0px 0px;
+    /* background-color: #f0e5e5; */
+    border-radius: 10px;
+}
+.add_student a:hover{
+    text-decoration: underline;
+    /* background-color: #cec6c6; */
+    color: #3b3434;
+}
+
+/* ===== STUDENT LIST CONTAINER ===== */
+.StudentList {
+    max-width: 900px;
+    margin-left: 135px;
+    text-align: center;
+}
+
+/* Title */
+.StudentList h1 {
+    font-size: 36px;
+    font-weight: 700;
+    color: #2980b9; 
+    margin-bottom: 40px;
+    /* margin-top: 10px; */
+}
+
+.StudentList ul {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+    padding: 0;
+    list-style: none;
+    justify-items: center; /* center each grid item */
+}
+
+
+.StudentList ul li {
+    background: #e0e0f8; 
+    border-radius: 16px;
+    box-shadow: 0 6px 16px rgba(75, 66, 118, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 100%;
+    max-width: 280px;
+}
+
+.StudentList ul li:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 32px rgba(75, 66, 118, 0.25);
+}
+
+.StudentList ul li a {
+    display: block;
+    padding: 28px 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #2980b9; /* purple */
+    text-decoration: none;
+    text-align: center;
+}
+
+.StudentList ul li a:hover {
+    text-decoration: underline;
+}
+/* ==================footer================================================ */
+.site-footer {
+    background: linear-gradient(135deg, #e6f2ff, #fdfdfd);
+    border-top: 2px solid #2980b9;
+    padding: 40px 20px;
+    text-align: center;
+    color: #33475b;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 60px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2a4d69;
+    margin-bottom: 10px;
+}
+
+.footer-subtitle {
+    font-size: 16px;
+    color: #4d648d;
+    margin-bottom: 12px;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+/* ================================================================ */
+@media (max-width: 768px) {
+    .nav_container {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .links {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    .links li a {
+        padding: 12px 18px;
+        border-radius: 8px;
+    }
+
+    .StudentList ul {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

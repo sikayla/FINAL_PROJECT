@@ -1,0 +1,244 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#nav_bar {
+    background-color: #2980b9; 
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav_container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 48px; /* space between logo and links */
+}
+
+.logo {
+    height: 70px;
+    cursor: pointer;
+    margin-right: 600px;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.links li a {
+    color: #f7f7ff; /* very light lavender */
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.links li a:hover,
+.links li a:focus {
+    background-color: #2e3d47; 
+    outline: none;
+}
+/* ======================================== */
+.detail-container {
+    max-width: 900px;
+    margin: auto;
+    background: #fff;
+    padding: 30px 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+.back_to_index a{
+    margin-top: 100px;
+    margin-left: 740px;
+    position: relative;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    background-color: #3498db;
+    transition: 0.3s ease;
+}
+.back_to_index a:hover {
+    background-color: #173041;
+}
+/* Title */
+.detail-container h1 {
+    font-size: 36px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+.detail-container p {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+/* Action Buttons */
+.student-actions {
+    margin: 20px 0;
+}
+.btn {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 5px 5px 5px 0;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.3s ease;
+    font-size: 14px;
+    cursor: pointer;
+}
+.update-btn {
+    background-color: #3498db;
+    color: #fff;
+}
+
+.update-btn:hover {
+    background-color: #2980b9;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+h2 {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 28px;
+    color: #2c3e50;
+    text-align: center;
+}
+
+/* Subject List */
+.subject-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.subject-item {
+    background-color: #ecf0f1;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    border-left: 6px solid #2980b9;
+    border-radius: 8px;
+}
+
+/* Subject Header */
+.subject-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 20px;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+/* Table Styles */
+.grade-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+.grade-table th,
+.grade-table td {
+    padding: 10px;
+    border: 1px solid #bdc3c7;
+    text-align: center;
+}
+
+.grade-table th {
+    background-color: #2980b9;
+    color: white;
+}
+
+.grade-table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.mini-btn {
+    padding: 5px 30px;
+    font-size: 13px;
+}
+
+/* -----------footer-------------- */
+/* footer.css — Light pastel theme for Kabsu Student Records */
+
+.site-footer {
+    background: linear-gradient(135deg, #e6f2ff, #fdfdfd);
+    border-top: 2px solid #2980b9;
+    padding: 40px 20px;
+    text-align: center;
+    color: #33475b;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 60px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2a4d69;
+    margin-bottom: 10px;
+}
+
+.footer-subtitle {
+    font-size: 16px;
+    color: #4d648d;
+    margin-bottom: 12px;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+
+/* Optional: Add hover animation for fun */
+.footer-title:hover {
+    color: #007acc;
+    transition: color 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .detail-container {
+        padding: 20px;
+    }
+
+    .subject-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .btn {
+        margin-top: 10px;
+    }
+
+    .grade-table th, .grade-table td {
+        font-size: 14px;
+        padding: 8px;
+    }
+}

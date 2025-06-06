@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Student</title>
+    <link rel="stylesheet" href="/static/css/styles_button.css">
+</head>
+<body>
+    <div class="delete_update">
+        <h2>Confirm Delete Student</h2>
+        <p>Are you sure you want to delete <strong>{{ student.name }}</strong>?</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">Yes, delete</button>
+            <a href="{% url 'student_detail' student.id %}" class="delete_cancel">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Delete Grade</title>
+    <link rel="stylesheet" href="/static/css/styles_button.css">
+</head>
+<body>
+    <div class="delete_update">
+        <h2>Confirm Delete Grade</h2>
+        <p>Are you sure you want to delete this grade?</p>
+        <ul>
+            <li>Activity: {{ grade.activity }}</li>
+            <li>Quiz: {{ grade.quiz }}</li>
+            <li>Exam: {{ grade.exam }}</li>
+        </ul>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="delete-btn">Yes, delete</button>
+            <a href="{% url 'student_detail' grade.subject.student.id %}" class="delete_cancel">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>

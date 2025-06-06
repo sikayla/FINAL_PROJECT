@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Grade - Kabsu Student Records</title>
+    <!-- Tailwind CSS CDN for responsive styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* Custom styles for 'Inter' font and base background color */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #E0E5EC; /* Matte light gray - a bit like a clay or soft plastic */
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure body takes full viewport height */
+            color: #374151; /* Default text color - gray-700 */
+        }
+        /* Neumorphic-inspired shadow for some elements */
+        .neumorphic-shadow {
+            box-shadow: 6px 6px 12px #c5cad1, -6px -6px 12px #fbffff;
+        }
+        .neumorphic-shadow-inset {
+            box-shadow: inset 5px 5px 10px #c5cad1, inset -5px -5px 10px #fbffff;
+        }
+
+        /* Custom styling for Django form elements rendered with {{ form.as_p }} */
+        .form-container p { /* Each field is wrapped in a <p> tag by form.as_p */
+            margin-bottom: 1rem; /* Space between form fields */
+        }
+        .form-container label {
+            display: block;
+            font-weight: 600; /* font-semibold */
+            margin-bottom: 0.25rem; /* mb-1 */
+            font-size: 0.875rem; /* text-sm */
+            color: #374151; /* gray-700 */
+        }
+        .form-container input[type="text"],
+        .form-container input[type="number"],
+        .form-container select,
+        .form-container textarea {
+            width: 100%;
+            border: 1px solid #D1D5DB; /* border-gray-300 */
+            border-radius: 0.375rem; /* rounded-md */
+            padding: 0.75rem 1rem; /* py-3 px-4 */
+            font-size: 1rem; /* text-base */
+            background-color: #f3f4f6; /* bg-gray-100 */
+            box-shadow: inset 2px 2px 5px #c5cad1, inset -2px -2px 5px #fbffff; /* Inset neumorphic shadow */
+            transition: all 0.2s ease-in-out;
+        }
+        .form-container input:focus,
+        .form-container select:focus,
+        .form-container textarea:focus {
+            outline: none;
+            --tw-ring-color: #3B82F6; /* ring-blue-500 */
+            box-shadow: 0 0 0 2px var(--tw-ring-color);
+            border-color: #3B82F6;
+        }
+        .form-container .errorlist {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 0.25rem;
+            font-size: 0.75rem;
+            color: #EF4444; /* text-red-500 */
+        }
+    </style>
+</head>
+<body class="antialiased">
+    <!-- Main container for centering content -->
+    <div class="min-h-screen flex items-center justify-center px-4 py-8">
+        <!-- Content card with neumorphic design -->
+        <div class="bg-slate-200 p-8 rounded-xl shadow-xl neumorphic-shadow-inset w-full max-w-lg">
+            <h2 class="text-3xl font-bold mb-8 text-center text-slate-700">Update Grade</h2>
+            <form method="post" class="form-container">
+                {% csrf_token %}
+                {{ form.as_p }}
+                <div class="flex flex-col sm:flex-row justify-end gap-4 mt-8">
+                    <a href="{% url 'student_detail' form.instance.subject.student.id %}" class="flex-1 sm:flex-none text-center bg-gray-300 hover:bg-gray-400 text-gray-800 font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-200 ease-in-out neumorphic-shadow flex items-center justify-center space-x-2">
+                        <i class="fa fa-times-circle mr-2"></i> Cancel
+                    </a>
+                    <button type="submit" class="flex-1 sm:flex-none bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg shadow-md hover:shadow-lg transition duration-300 ease-in-out neumorphic-shadow flex items-center justify-center space-x-2">
+                        <i class="fa fa-save mr-2"></i> Save Changes
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

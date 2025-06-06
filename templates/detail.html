@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load static %}
+    <meta charset="UTF-8" />
+    <title>Student Details</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/detail.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navbar.css' %}"/>
+    <link rel="icon" type="image/x-icon" href="{% static 'css/favicon.ico' %}"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  </head>
+  <body>
+    <!-- NAVIGATION BAR -->
+    <nav id="nav_bar">
+      <div class="nav_container">
+          <img
+            src="{% static 'css/LOGOS1.png' %}"
+            class="logo"
+            alt="Kabsu Logo"/>
+        <ul class="links">
+          <li>
+            <a href="{% url 'student_list' %}">
+              <i class="fa fa-home"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="{% url 'about' %}" class="active"
+              ><i class="fa fa-book"></i> About</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="detail-container">
+      <h1>{{ student.name }}</h1>
+      <p>Email: {{ student.email }}</p>
+      <p>Age: {{ student.age }}</p>
+
+      <div class="student-actions">
+        <a href="{% url 'update_student' student.id %}" class="btn update-btn"
+          >Update Student</a
+        >
+        <a
+          href="{% url 'delete_student' student.id %}"
+          class="btn delete-btn"
+          onclick="return confirm('Are you sure you want to delete this student?');"
+          >Delete Student</a
+        >
+      </div>
+
+      <h2>Subjects and Grades</h2>
+
+      {% if student.subjects.all %}
+      <ul class="subject-list">
+        {% for subject in student.subjects.all %}
+        <li class="subject-item">
+          <div class="subject-header">
+            <strong>Subject:</strong> {{ subject.name }}
+            <span>
+              <a href="{% url 'update_subject' subject.id %}" class="btn mini-btn update-btn">Edit</a>
+              <a href="{% url 'delete_subject' subject.id %}" class="btn mini-btn delete-btn" onclick="return confirm('Delete this subject?');">Delete</a>
+            </span>
+          </div>
+
+          {% if subject.grades.all %}
+          <table class="grade-table">
+            <thead>
+              <tr>
+                <th>Activity</th>
+                <th>Quiz</th>
+                <th>Exam</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for grade in subject.grades.all %}
+              <tr>
+                <td>{{ grade.activity }}</td>
+                <td>{{ grade.quiz }}</td>
+                <td>{{ grade.exam }}</td>
+                <td>
+                  <a href="{% url 'add_grade' subject.id %}" class="btn mini-btn update-btn">Add</a>
+                  <a href="{% url 'update_grade' grade.id %}" class="btn mini-btn update-btn">Edit</a>
+                  <a href="{% url 'delete_grade' grade.id %}" class="btn mini-btn delete-btn" onclick="return confirm('Delete this grade?');">Delete</a>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          {% else %}
+          <p>No grades available for this subject.</p>
+          {% endif %}
+        </li>
+        {% endfor %}
+      </ul>
+      {% else %}
+      <p>No subjects found for this student.</p>
+      {% endif %}
+    </div>
+
+    <footer class="site-footer">
+      <div class="footer-container">
+        <p class="footer-title">Kabsu Student Records</p>
+        <p class="footer-subtitle">Crafted with 💙 by Robby & Kayla.</p>
+        <p class="footer-copy">&copy; 2025 All Rights Reserved</p>
+      </div>
+    </footer>
+  </body>
+</html>

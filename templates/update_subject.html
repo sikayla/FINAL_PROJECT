@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Update Subject</title>
+    <link rel="stylesheet" href="/static/css/styles_button.css">
+</head>
+<body>
+    <div class="update_form">
+        <h2>Update Subject</h2>
+        <form method="post">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="update-btn">Save</button>
+            <a href="{% url 'student_detail' form.instance.student.id %}" class="cancel_update">Cancel</a>
+        </form>
+    </div>
+</body>
+</html>
