@@ -7,6 +7,142 @@
     <link rel="stylesheet" href="{% static 'css/about.css' %}">
     <link rel="icon" href="{% static 'css/favicon.ico' %}" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+      /* General Styling */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* Navbar reuse */
+#nav_bar {
+    background-color: #2980b9; 
+    box-shadow: 0 2px 8px rgba(108, 92, 231, 0.4);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav_container {
+    max-width: 1300px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 24px;
+    gap: 48px; /* space between logo and links */
+}
+
+.add_student a{
+    font-size: 20px;
+    font-weight: 600;
+    color: #2980b9; 
+    text-decoration: none;
+    display: inline-flex;
+    padding: 10px 20px 10px 20px;
+    margin: 10px 10px 0px 0px;
+    background-color: #f0e5e5;
+    border-radius: 10px;
+}
+.add_student a:hover{
+    text-decoration: underline;
+    background-color: #cec6c6;
+    color: #fff;
+}
+
+.logo {
+    margin-right: 600px;
+    height: 70px;
+    cursor: pointer;
+}
+
+.links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+}
+
+.links li a {
+    color: #f7f7ff; 
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    padding: 8px 16px;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.links li a:hover,
+.links li a:focus {
+    background-color: #2e3d47; 
+    outline: none;
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 20px;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.about-container {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.about-container h1 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+}
+
+.about-container p {
+    font-size: 16px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* Footer Styling */
+.site-footer {
+    background: linear-gradient(135deg, #e6f2ff, #fdfdfd);
+    border-top: 2px solid #2980b9;
+    padding: 40px 20px;
+    text-align: center;
+    color: #33475b;
+    font-family: 'Segoe UI', sans-serif;
+    margin-top: 60px;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.footer-container {
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+.footer-title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #2a4d69;
+    margin-bottom: 10px;
+}
+
+.footer-subtitle {
+    font-size: 16px;
+    color: #4d648d;
+    margin-bottom: 12px;
+}
+
+.footer-copy {
+    font-size: 14px;
+    color: #7f8c8d;
+}
+</style>
 </head>
 <body>
     <!-- NAVIGATION BAR -->
