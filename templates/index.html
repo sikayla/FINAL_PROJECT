@@ -1,7 +1,7 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    {% load static %}
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Page - Kabsu Student Records</title>
@@ -51,7 +51,8 @@
       <!-- Logo section -->
       <div class="flex items-center flex-shrink-0 text-white mr-6 mb-4 md:mb-0">
           <!-- Placeholder for logo if static path doesn't work in preview -->
-          <img src="LOGOS1.png" class="h-12 w-auto rounded-md mr-4" alt="Kabsu Logo" />
+          {% load static %}
+         <img src="{% static 'images/LOGOS1.png' %}" class="h-12 w-auto rounded-md mr-4" alt="Kabsu Logo" />
           <span class="font-semibold text-2xl tracking-tight">Kabsu Student Records</span>
       </div>
 
