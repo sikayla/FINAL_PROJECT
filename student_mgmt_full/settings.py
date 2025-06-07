@@ -1,10 +1,11 @@
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
+
 SECRET_KEY = 'django-insecure-demo-key'
 DEBUG = True
-ALLOWED_HOSTS = ['final-project-0uik.onrender.com', 'localhost', '127.0.0.1']
 
+ALLOWED_HOSTS = ['final-project-0uik.onrender.com', 'localhost', '127.0.0.1']
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -55,10 +56,25 @@ DATABASES = {
 }
 
 AUTH_PASSWORD_VALIDATORS = []
+
 LANGUAGE_CODE = 'en-us'
 TIME_ZONE = 'UTC'
 USE_I18N = True
 USE_TZ = True
 
-STATIC_URL = 'static/'
-STATICFILES_DIRS = [BASE_DIR / 'static']
+### ✅ STATIC FILE CONFIGURATION ###
+STATIC_URL = '/static/'
+
+# Tell Django where your static files (e.g., images folder) are during dev
+STATICFILES_DIRS = [
+    BASE_DIR / "static",  # So you can do {% static 'images/LOGOS1.png' %}
+]
+
+# Where collectstatic will copy files to (used by Render in production)
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+# Media support (optional, in case you're uploading user files later)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
