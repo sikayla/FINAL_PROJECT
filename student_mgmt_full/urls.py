@@ -2,6 +2,8 @@
 from django.contrib import admin
 from django.urls import path, include
 from students import views
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -20,4 +22,9 @@ urlpatterns = [
     path('grade/<int:pk>/delete/', views.delete_grade, name='delete_grade'),
     path('grade/add/<int:subject_id>/', views.add_grade, name='add_grade'),
     path('api/', include('students.api_urls')),
+    
+    
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
